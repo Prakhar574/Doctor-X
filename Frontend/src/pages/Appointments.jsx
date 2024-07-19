@@ -21,29 +21,29 @@ const Appointments = () => {
 
     const fetchAppointments = async () => {
         try {
-            const response = await axios.get('${BACKEND_URL}/api/appointments');
+            const response = await axios.get(`${BACKEND_URL}/api/appointments`);
             setAppointments(Array.isArray(response.data) ? response.data : []);
         } catch (error) {
-            console.error('Error fetching appointments:', error);
+            console.error('Error fetching appointments:', error.response ? error.response.data : error.message);
             setAppointments([]);
         }
     };
 
     const fetchPatients = async () => {
         try {
-            const response = await axios.get('${BACKEND_URL}/api/patients');
+            const response = await axios.get(`${BACKEND_URL}/api/patients`);
             setPatients(response.data);
         } catch (error) {
-            console.error('Error fetching patients:', error);
+            console.error('Error fetching patients:', error.response ? error.response.data : error.message);
         }
     };
 
     const fetchDoctors = async () => {
         try {
-            const response = await axios.get('${BACKEND_URL}/api/doctors');
+            const response = await axios.get(`${BACKEND_URL}/api/doctors`);
             setDoctors(response.data);
         } catch (error) {
-            console.error('Error fetching doctors:', error);
+            console.error('Error fetching doctors:', error.response ? error.response.data : error.message);
         }
     };
 
@@ -51,7 +51,7 @@ const Appointments = () => {
         e.preventDefault();
         try {
             const newAppointment = { patientId, doctorId, date, reason };
-            await axios.post('${BACKEND_URL}/api/appointments', newAppointment);
+            await axios.post(`${BACKEND_URL}/api/appointments`, newAppointment);
             fetchAppointments();
             setPatientId('');
             setDoctorId('');
