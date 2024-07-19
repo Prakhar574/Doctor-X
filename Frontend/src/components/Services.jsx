@@ -46,7 +46,7 @@ const ServicesPage = () => {
     return (
         <div>
             <section className="services">
-                <h2 class="h3">Our Services</h2>
+                <h2 className="h3">Our Services</h2>
                 <div className="service-cards">
                     {services.map((service, index) => (
                         <div
@@ -68,7 +68,7 @@ const ServicesPage = () => {
                 </div>
             </section>
             <section className="testimonials">
-                <h2 class="h3">What Our Patients Say</h2>
+                <h2 className="h3">What Our Patients Say</h2>
                 <div className="testimonials-cards">
                     <div className="testimonial">
                         <p>"The best cardiac care I have ever received! Highly recommend."</p>
@@ -85,12 +85,12 @@ const ServicesPage = () => {
                 </div>
             </section>
             <section className="cta-banner">
-                <h2 class="h3">Join Us for a Healthier Tomorrow</h2>
+                <h2 className="h3">Join Us for a Healthier Tomorrow</h2>
                 <p>Contact us today to schedule an appointment or to learn more about our services.</p>
                 <a href="/contact" className="cta-button">Contact Us</a>
             </section>
             <section className="statistics">
-                <h2 class="h3">Our Achievements</h2>
+                <h2 className="h3">Our Achievements</h2>
                 <div className="stats-cards">
                     <div className="stat-card">
                         <h3>500+</h3>
@@ -107,7 +107,7 @@ const ServicesPage = () => {
                 </div>
             </section>
             <section className="team">
-                <h2 class="h2" >Meet Our Team</h2>
+                <h2 className="h2" >Meet Our Team</h2>
                 <div className="team-cards">
                     <div className="team-member">
                         <img src={member1Img} alt="Dr. Alice Johnson" />
@@ -127,7 +127,7 @@ const ServicesPage = () => {
                 </div>
             </section>
             <section className="blog">
-                <h2 class="h3">Latest Blog Posts</h2>
+                <h2 className="h3">Latest Blog Posts</h2>
                 <div className="blog-cards">
                     <div className="blog-post">
                         <img src={post1Img} alt="How to Maintain a Healthy Heart" />
@@ -150,7 +150,7 @@ const ServicesPage = () => {
                 </div>
             </section>
             <section className="faq">
-                <h2 class="h2">Frequently Asked Questions</h2>
+                <h2 className="h2">Frequently Asked Questions</h2>
                 <div className="faq-cards">
                     <div className="faq-item">
                         <h3>What services do you offer?</h3>

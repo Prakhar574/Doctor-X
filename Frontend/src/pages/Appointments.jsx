@@ -63,19 +63,54 @@ const Appointments = () => {
     };
 
     const handlePrint = (appointment) => {
+        if (!appointment || !appointment.patientId || !appointment.doctorId) {
+            console.error('Invalid appointment data:', appointment);
+            return;
+        }
+
+        const patientName = appointment.patientId.name || 'Unknown Patient';
+        const doctorName = appointment.doctorId.name || 'Unknown Doctor';
+        const appointmentDate = new Date(appointment.date).toLocaleDateString() || 'Unknown Date';
+        const reason = appointment.reason || 'No Reason Provided';
+
         const printContents = `
-            <div>
-                <h1>Appointment Details</h1>
-                <p><strong>Patient Name:</strong> ${appointment.patientId.name}</p>
-                <p><strong>Doctor Name:</strong> ${appointment.doctorId.name}</p>
-                <p><strong>Date:</strong> ${new Date(appointment.date).toLocaleDateString()}</p>
-                <p><strong>Reason:</strong> ${appointment.reason}</p>
-            </div>
+            <html>
+                <head>
+                    <title>Appointment Details</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 20px; }
+                        h1 { text-align: center; }
+                        p { font-size: 14px; }
+                        .details { margin-top: 20px; }
+                    </style>
+                </head>
+                <body>
+                    <h1>Appointment Details</h1>
+                    <div class="details">
+                        <p><strong>Patient Name:</strong> ${patientName}</p>
+                        <p><strong>Doctor Name:</strong> ${doctorName}</p>
+                        <p><strong>Date:</strong> ${appointmentDate}</p>
+                        <p><strong>Reason:</strong> ${reason}</p>
+                    </div>
+                </body>
+            </html>
         `;
+        
         const newWindow = window.open('', '', 'width=600,height=400');
+        if (!newWindow) {
+            console.error('Failed to open new window');
+            return;
+        }
+        console.log('New window opened');
+
+        newWindow.document.open();
         newWindow.document.write(printContents);
         newWindow.document.close();
+        console.log('Content written to new window');
+
         newWindow.print();
+        console.log('Print dialog initiated');
+        newWindow.close();
     };
 
     return (
