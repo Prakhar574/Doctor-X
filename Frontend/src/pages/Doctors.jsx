@@ -15,7 +15,7 @@ const Doctors = () => {
 
     const fetchDoctors = async () => {
         try {
-            const response = await axios.get('https://vercel.com/prakhars-projects-601b6467/backend/api/doctors');
+            const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/doctors`);
             setDoctors(Array.isArray(response.data) ? response.data : []);
         } catch (error) {
             console.error('Error fetching doctors:', error);
@@ -27,7 +27,7 @@ const Doctors = () => {
         e.preventDefault();
         try {
             const newDoctor = { name, specialization, experience };
-            await axios.post('https://vercel.com/prakhars-projects-601b6467/backend/api/doctors', newDoctor);
+            await axios.post(`${import.meta.env.VITE_API_BASE_URL}/doctors`, newDoctor);
             fetchDoctors();
             setName('');
             setSpecialization('');

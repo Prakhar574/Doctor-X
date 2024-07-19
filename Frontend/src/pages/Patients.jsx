@@ -16,7 +16,7 @@ const Patients = () => {
 
     const fetchPatients = async () => {
         try {
-            const response = await axios.get('https://vercel.com/prakhars-projects-601b6467/backend/api/patients'); 
+            const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/patients`);
             setPatients(Array.isArray(response.data) ? response.data : []);
         } catch (error) {
             console.error('Error fetching patients:', error);
@@ -28,7 +28,7 @@ const Patients = () => {
         e.preventDefault();
         try {
             const newPatient = { name, age, gender, condition };
-            await axios.post('https://vercel.com/prakhars-projects-601b6467/backend/api/patients', newPatient); 
+            await axios.post(`${import.meta.env.VITE_API_BASE_URL}/patients`, newPatient);
             fetchPatients();
             setName('');
             setAge('');

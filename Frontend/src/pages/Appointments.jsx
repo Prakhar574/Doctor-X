@@ -20,7 +20,7 @@ const Appointments = () => {
 
     const fetchAppointments = async () => {
         try {
-            const response = await axios.get('https://vercel.com/prakhars-projects-601b6467/backend/api/appointments');
+            const response = await axios.get('${import.meta.env.VITE_API_BASE_URL}/appointments');
             setAppointments(Array.isArray(response.data) ? response.data : []);
         } catch (error) {
             console.error('Error fetching appointments:', error);
@@ -30,7 +30,7 @@ const Appointments = () => {
 
     const fetchPatients = async () => {
         try {
-            const response = await axios.get('https://vercel.com/prakhars-projects-601b6467/backend/api/patients');
+            const response = await axios.get('${import.meta.env.VITE_API_BASE_URL}/patients');
             setPatients(response.data);
         } catch (error) {
             console.error('Error fetching patients:', error);
@@ -39,7 +39,7 @@ const Appointments = () => {
 
     const fetchDoctors = async () => {
         try {
-            const response = await axios.get('https://vercel.com/prakhars-projects-601b6467/backend/api/doctors');
+            const response = await axios.get('${import.meta.env.VITE_API_BASE_URL}/doctors');
             setDoctors(response.data);
         } catch (error) {
             console.error('Error fetching doctors:', error);
@@ -50,7 +50,7 @@ const Appointments = () => {
         e.preventDefault();
         try {
             const newAppointment = { patientId, doctorId, date, reason };
-            await axios.post('https://vercel.com/prakhars-projects-601b6467/backend/api/appointments', newAppointment);
+            await axios.post('${import.meta.env.VITE_API_BASE_URL}/appointments', newAppointment);
             fetchAppointments();
             setPatientId('');
             setDoctorId('');
