@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Appointments.css';
+import BACKEND_URL from './config';
 
 const Appointments = () => {
     const [appointments, setAppointments] = useState([]);
@@ -20,7 +21,7 @@ const Appointments = () => {
 
     const fetchAppointments = async () => {
         try {
-            const response = await axios.get('${import.meta.env.VITE_API_BASE_URL}/appointments');
+            const response = await axios.get('${BACKEND_URL}/api/appointments');
             setAppointments(Array.isArray(response.data) ? response.data : []);
         } catch (error) {
             console.error('Error fetching appointments:', error);
@@ -30,7 +31,7 @@ const Appointments = () => {
 
     const fetchPatients = async () => {
         try {
-            const response = await axios.get('${import.meta.env.VITE_API_BASE_URL}/patients');
+            const response = await axios.get('${BACKEND_URL}/api/patients');
             setPatients(response.data);
         } catch (error) {
             console.error('Error fetching patients:', error);
@@ -39,7 +40,7 @@ const Appointments = () => {
 
     const fetchDoctors = async () => {
         try {
-            const response = await axios.get('${import.meta.env.VITE_API_BASE_URL}/doctors');
+            const response = await axios.get('${BACKEND_URL}/api/doctors');
             setDoctors(response.data);
         } catch (error) {
             console.error('Error fetching doctors:', error);
@@ -50,7 +51,7 @@ const Appointments = () => {
         e.preventDefault();
         try {
             const newAppointment = { patientId, doctorId, date, reason };
-            await axios.post('${import.meta.env.VITE_API_BASE_URL}/appointments', newAppointment);
+            await axios.post('${BACKEND_URL}/api/appointments', newAppointment);
             fetchAppointments();
             setPatientId('');
             setDoctorId('');

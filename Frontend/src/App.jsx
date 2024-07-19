@@ -11,6 +11,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import './styles.css'; 
 
+
 const App = () => {
     return (
         <Router>

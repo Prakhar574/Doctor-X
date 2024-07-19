@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Doctors.css';
-
+import BACKEND_URL from './config';
 const Doctors = () => {
     const [doctors, setDoctors] = useState([]);
     const [name, setName] = useState('');
@@ -15,7 +15,7 @@ const Doctors = () => {
 
     const fetchDoctors = async () => {
         try {
-            const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/doctors`);
+            const response = await axios.get(`${BACKEND_URL}/api/doctors`);
             setDoctors(Array.isArray(response.data) ? response.data : []);
         } catch (error) {
             console.error('Error fetching doctors:', error);
@@ -27,7 +27,7 @@ const Doctors = () => {
         e.preventDefault();
         try {
             const newDoctor = { name, specialization, experience };
-            await axios.post(`${import.meta.env.VITE_API_BASE_URL}/doctors`, newDoctor);
+            await axios.post(`${BACKEND_URL}/api/doctors`, newDoctor);
             fetchDoctors();
             setName('');
             setSpecialization('');
