@@ -1,7 +1,6 @@
-// vite.config.js
-export default {
-  build: {
-    outDir: 'dist',
-  },
-  // other Vite config options...
-};
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+});
