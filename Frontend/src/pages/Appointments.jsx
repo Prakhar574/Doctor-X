@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Appointments.css';
-import BACKEND_URL from './config';
+import BACKEND_URL from '@/config';
 
 const Appointments = () => {
     const [appointments, setAppointments] = useState([]);
