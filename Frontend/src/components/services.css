@@ -1,0 +1,343 @@
+/* General Section Styles */
+section {
+    padding: 3rem 2rem;
+    background-color: #fff;
+}
+
+.h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #0b0b0b;
+    text-shadow: 2px 2px 4px white;
+}
+.h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #00796b;
+    text-shadow: 2px 2px 4px rgb(14, 12, 12);
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    max-width: 250px;
+    height: 350px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(11, 11, 11, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.card h3 {
+    margin: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.card-hover {
+    background-color: rgba(10, 10, 10, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card-hover p {
+    color: #fff; 
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+
+.card.hovered .card-hover {
+    opacity: 1;
+}
+
+.service-button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.service-button:hover {
+    background-color: #0056b3;
+}
+
+.testimonials {
+    background-color: #f7f7f7;
+}
+
+.testimonials-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.testimonial p {
+    font-style: italic;
+    color: #555;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.cta-banner {
+    background: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+}
+
+.cta-button {
+    background-color: #0056b3;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #003f7f;
+}
+
+.statistics {
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.stats-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 1rem;
+    padding: 1.5rem;
+    max-width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.stat-card h3 {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+.stat-card p {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.team {
+    background: url('../assets/service/bg1.jpg') no-repeat center center/cover;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.team-member {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.team-member img {
+    width: 100%;
+    height: 15;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.team-member h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.team-member p {
+    color: #555;
+}
+
+.blog {
+    background-color: #f7f7f7;
+}
+
+.blog-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.blog-post {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-post:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.blog-post img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.blog-post h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.blog-post p {
+    color: #555;
+}
+
+.blog-button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.blog-button:hover {
+    background-color: #0056b3;
+}
+
+.faq {
+    background: url('../assets/service/featured.jpeg') no-repeat center center/cover;
+}
+
+.faq-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 300px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faq-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.faq-item h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.faq-item p {
+    color: #555;
+}
