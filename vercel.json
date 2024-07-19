@@ -2,13 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/index.js",  
-      "use": "@vercel/node"
+      "src": "vite.config.js",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     },
     {
-      "src": "frontend/vite.config.js",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "frontend/dist" }
+      "src": "backend/index.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -18,7 +20,11 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/dist/$1"
+      "dest": "/dist/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/frontend/src/assets/$1"
     }
   ]
 }
